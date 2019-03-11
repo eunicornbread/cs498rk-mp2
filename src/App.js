@@ -103,6 +103,7 @@ class List extends Component {
 		pokemon.forEach(function(element) {
 			const name = element.name.toLowerCase();
 			if(element.id > 10000) {
+				
 			} else if(results < 10 && (search == "" || name.includes(search))) {
 				results++;
 				var front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + element.id + ".png";
