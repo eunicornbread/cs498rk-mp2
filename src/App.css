@@ -23,6 +23,44 @@
   color: #61dafb;
 }
 
+@import url(https://use.fontawesome.com/releases/v5.7.2/css/all.css);
+@import url(//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css);
+
+.res-mwidth {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.items {
+  padding-left: 40px;
+}
+
+.items table {
+      border: 2px solid rgb(206, 212, 218);
+    border-top: 0;
+}
+
+thead th {
+  border-bottom: 0 !important;
+}
+
+#search {
+  border-bottom-right-radius: 0;
+  border-bottom: 0;
+}
+
+.input-group {
+  margin-top: 40px;
+}
+
+.cimg {
+    background-image: none !important;
+}
+
+.pokename {
+  text-transform: capitalize;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -31,3 +69,6 @@
     transform: rotate(360deg);
   }
 }
+
+.dataTables_info {display: none;}
+tr.hidden {display: none;}
