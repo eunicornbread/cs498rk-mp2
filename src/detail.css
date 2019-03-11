@@ -1,0 +1,31 @@
+.detailview {
+	max-width: 740px;
+}
+
+.cardimage {
+	max-width: 400px;
+}
+
+.card {
+	position: relative;
+}
+
+#leftarrow {
+	position: absolute;
+	top: 50%;
+	left: -90px;
+	transform: translateY(-50%);
+	font-size: 50px;
+}
+
+#rightarrow {
+	position: absolute;
+	top: 50%;
+	right: -90px;
+	transform: translateY(-50%);
+	font-size: 50px;
+}
+
+.hidden {
+	display: none;
+}
