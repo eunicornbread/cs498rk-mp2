@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './detail.css';
+import './detail.scss';
 import { Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
@@ -44,7 +44,7 @@ class Detail extends Component {
 	}
 
 	componentWillReceiveProps(props) {
-		var id = props.match.params.id;
+		var id = parseInt(props.match.params.id);
 		var url = "https://pokeapi.co/api/v2/pokemon/" + id;
 		var pokemon = this;
 		var image = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id + ".png";
@@ -83,21 +83,21 @@ class Detail extends Component {
 
 	render() {
 		const abilities = [];
-		if (this.state.abilities == undefined) {
+		if (this.state.abilities === undefined) {
 			this.state.abilities = [];
 		}
 
 		var count = 0;
 		this.state.abilities.forEach(function(element) {
-			if (count == 0) {
+			if (count === 0) {
 				abilities.push(
 					<><span className="badge badge-pill badge-info">{element}</span>&nbsp;</>
 					);
-			} else if (count == 1) {
+			} else if (count === 1) {
 				abilities.push(
 					<><span className="badge badge-pill badge-success">{element}</span>&nbsp;</>
 					);
-			} else if (count == 2) {
+			} else if (count === 2) {
 				abilities.push(
 					<><span className="badge badge-pill badge-light">{element}</span>&nbsp;</>
 					);
@@ -111,32 +111,32 @@ class Detail extends Component {
 		});
 
 		const types = [];
-		if (this.state.types == undefined) {
+		if (this.state.types === undefined) {
 			this.state.types = [];
 		}
 
 		this.state.types.forEach(function(element) {
-			if (element == "grass" || element == "bug") {
+			if (element === "grass" || element === "bug") {
 				types.push(
 					<><span class="badge badge-pill badge-success">{element}</span>&nbsp;</>	
 				);
-			} else if (element == "poison" || element == "ground") {
+			} else if (element === "poison" || element === "ground") {
 				types.push(
 					<><span class="badge badge-pill badge-warning">{element}</span>&nbsp;</>	
 				);
-			} else if (element == "fire" || element == "fighting") {
+			} else if (element === "fire" || element === "fighting") {
 				types.push(
 					<><span class="badge badge-pill badge-danger">{element}</span>&nbsp;</>	
 				);
-			} else if (element == "normal" || element == "ice") {
+			} else if (element === "normal" || element === "ice") {
 				types.push(
 					<><span class="badge badge-pill badge-info">{element}</span>&nbsp;</>	
 				);
-			} else if (element == "flying" || element == "water") {
+			} else if (element === "flying" || element === "water") {
 				types.push(
 					<><span class="badge badge-pill badge-primary">{element}</span>&nbsp;</>	
 				);
-			} else if (element == "dark") {
+			} else if (element === "dark") {
 				types.push(
 					<><span class="badge badge-pill badge-dark">{element}</span>&nbsp;</>	
 				);
@@ -148,33 +148,33 @@ class Detail extends Component {
 		});
 
 		const moves = [];
-		if (this.state.moves == undefined) {
+		if (this.state.moves === undefined) {
 			this.state.moves = [];
 		}
 
 		var index = 0;
 		this.state.moves.slice(0, 10).forEach(function(element) {
-			if (index == 0) {
+			if (index === 0) {
 				moves.push(
 					<><span class="badge badge-primary">{element}</span>&nbsp;</>	
 				);
-			} else if (index == 1) {
+			} else if (index === 1) {
 				moves.push(
 					<><span class="badge badge-secondary">{element}</span>&nbsp;</>	
 				);
-			} else if (index == 2) {
+			} else if (index === 2) {
 				moves.push(
 					<><span class="badge badge-success">{element}</span>&nbsp;</>	
 				);
-			} else if (index == 3) {
+			} else if (index === 3) {
 				moves.push(
 					<><span class="badge badge-danger">{element}</span>&nbsp;</>	
 				);
-			} else if (index == 4) {
+			} else if (index === 4) {
 				moves.push(
 					<><span class="badge badge-warning">{element}</span>&nbsp;</>	
 				);
-			} else if (index == 5) {
+			} else if (index === 5) {
 				moves.push(
 					<><span class="badge badge-info">{element}</span>&nbsp;</>	
 				);
@@ -194,7 +194,7 @@ class Detail extends Component {
 		var righturl = "/detail/" + right;
 
 		var leftarrow;
-		if (this.props.match.params.id == 1) {
+		if (parseInt(this.props.match.params.id) === 1) {
 			leftarrow = (<NavLink exact to={{ pathname: lefturl, state: 'flushDeal' }}>
 							<i class="fas fa-angle-double-left hidden" id="leftarrow"></i>
 						</NavLink>);
@@ -205,7 +205,7 @@ class Detail extends Component {
 		}
 
 		var rightarrow;
-		if (this.props.match.params.id == 807) {
+		if (parseInt(this.props.match.params.id) === 807) {
 			rightarrow = (<NavLink exact to={{ pathname: righturl, state: 'flushDeal' }}>
 						  	<i class="fas fa-angle-double-right hidden" id="rightarrow"></i>
 						  </NavLink>);

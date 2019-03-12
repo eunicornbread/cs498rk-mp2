@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import { Navbar } from 'react-bootstrap';
 import { Redirect, Route, NavLink, BrowserRouter as Router } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const axios = require('axios');
 
@@ -300,6 +301,13 @@ class App extends Component {
       </>
     );
   }
+}
+
+App.propTypes = {
+	id: PropTypes.number,
+	name: PropTypes.string,
+	callback: PropTypes.func,
+	filtertype: PropTypes.string
 }
 
 export default App;

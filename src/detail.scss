@@ -1,3 +1,9 @@
+@mixin vcenter {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 .detailview {
 	max-width: 740px;
 }
@@ -11,18 +17,14 @@
 }
 
 #leftarrow {
-	position: absolute;
-	top: 50%;
+	@include vcenter;
 	left: -90px;
-	transform: translateY(-50%);
 	font-size: 50px;
 }
 
 #rightarrow {
-	position: absolute;
-	top: 50%;
+	@include vcenter;
 	right: -90px;
-	transform: translateY(-50%);
 	font-size: 50px;
 }
 
