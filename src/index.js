@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import Detail from './detail';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Link, HashRouter as Router } from 'react-router-dom';
 
 
 const routing = (
