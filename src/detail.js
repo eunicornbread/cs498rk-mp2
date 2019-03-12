@@ -219,7 +219,7 @@ class Detail extends Component {
 				<div>
 					<Navbar bg="dark" variant="dark">
 			        	<NavLink exact to="/">
-			        		<Navbar.Brand href="#home">Pokedex</Navbar.Brand>      
+			        		<Navbar.Brand>Pokedex</Navbar.Brand>      
 			        	</NavLink>
 			      	</Navbar>
 
